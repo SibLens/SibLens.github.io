@@ -260,7 +260,7 @@ textarea {
     width: min(360px, 65vw);
     height: auto;
 
-    margin: 0 auto -25px;
+    margin: 0 auto -80px;
 
     object-fit: contain;
 
