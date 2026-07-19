@@ -1697,3 +1697,35 @@ height: 100%;
     }
 
 }
+/* =========================================
+   FULL GALLERY PAGE
+========================================= */
+
+.full-gallery-section .album-grid {
+    columns: 3;
+    column-gap: 20px;
+
+    display: block;
+}
+
+.full-gallery-section .album-photo {
+    width: 100%;
+    height: auto;
+
+    margin-bottom: 20px;
+
+    display: inline-block;
+
+    overflow: hidden;
+
+    break-inside: avoid;
+}
+
+.full-gallery-section .album-photo img {
+    width: 100%;
+    height: auto;
+
+    display: block;
+
+    object-fit: contain;
+}
