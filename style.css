@@ -300,7 +300,7 @@ text-underline-offset: 5px;
 
     font-family: "Fredoka", sans-serif;
 
-    font-size: clamp(6rem, 11vw, 9rem);
+    font-size: clamp(7rem, 13vw, 11rem);
     font-weight: 600;
 
     line-height: 1;
