@@ -74,7 +74,8 @@ const lightboxImage = document.getElementById("lightboxImage");
 const lightboxClose = document.getElementById("lightboxClose");
 const lightboxPrev = document.getElementById("lightboxPrev");
 const lightboxNext = document.getElementById("lightboxNext");
-
+const lightboxFullGallery =
+    document.getElementById("lightboxFullGallery");
 let currentImageIndex = 0;
 
 
@@ -101,17 +102,69 @@ albumImages.forEach((image, index) => {
 
 function showImage(index) {
 
-    if (index < 0) {
-        currentImageIndex = albumImages.length - 1;
+    const isHomepageGallery =
+        document.querySelector(".gallery-item") !== null &&
+        lightboxFullGallery !== null;
+
+
+    // Homepage Gallery:
+    // Going forward after Photo 6 shows
+    // the View Full Gallery option.
+
+    if (isHomepageGallery && index >= albumImages.length) {
+
+        currentImageIndex = albumImages.length;
+
+        lightboxImage.style.display = "none";
+        lightboxFullGallery.style.display = "block";
+
+        lightboxNext.style.display = "none";
+
+        return;
     }
 
-    else if (index >= albumImages.length) {
+
+    // Homepage Gallery:
+    // Going backwards from the end screen
+    // returns to Photo 6.
+
+    if (isHomepageGallery && index < 0) {
+
         currentImageIndex = 0;
+
+    }
+
+
+    // Adventure albums continue looping normally.
+
+    else if (!isHomepageGallery && index < 0) {
+
+        currentImageIndex = albumImages.length - 1;
+
+    }
+
+    else if (!isHomepageGallery && index >= albumImages.length) {
+
+        currentImageIndex = 0;
+
     }
 
     else {
+
         currentImageIndex = index;
+
     }
+
+
+    // Show the photo again
+
+    lightboxImage.style.display = "block";
+
+    if (lightboxFullGallery) {
+        lightboxFullGallery.style.display = "none";
+    }
+
+    lightboxNext.style.display = "";
 
     lightboxImage.src =
         albumImages[currentImageIndex].src;
