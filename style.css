@@ -610,6 +610,7 @@ text-underline-offset: 5px;
 
 .adventure-info {
     padding: 25px;
+    text-align: center;
 }
 
 .adventure-info h3 {
@@ -617,7 +618,7 @@ text-underline-offset: 5px;
 
     font-family: "Fredoka", sans-serif;
 
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 500;
 
     color: var(--white);
