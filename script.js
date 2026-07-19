@@ -144,3 +144,46 @@ lightboxClose.addEventListener("click", () => {
     document.body.style.overflow = "";
 
 });
+// ==========================================
+// LIGHTBOX KEYBOARD CONTROLS
+// ==========================================
+
+document.addEventListener("keydown", (event) => {
+
+    // Only use keyboard controls when
+    // the lightbox is open
+
+    if (!lightbox.classList.contains("active")) {
+        return;
+    }
+
+
+    // Right arrow = next photo
+
+    if (event.key === "ArrowRight") {
+
+        showImage(currentImageIndex + 1);
+
+    }
+
+
+    // Left arrow = previous photo
+
+    if (event.key === "ArrowLeft") {
+
+        showImage(currentImageIndex - 1);
+
+    }
+
+
+    // Escape = close lightbox
+
+    if (event.key === "Escape") {
+
+        lightbox.classList.remove("active");
+
+        document.body.style.overflow = "";
+
+    }
+
+});
