@@ -1139,7 +1139,20 @@ text-underline-offset: 5px;
 .hero-small-text span {
     margin: 0 2px;
 }
+/* Adventures - Mobile */
 
+.adventures-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+.adventure-image {
+    height: 300px;
+}
+
+.adventure-card {
+    width: 100%;
+}
     /* Hero */
 
     .hero {
