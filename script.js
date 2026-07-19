@@ -298,3 +298,31 @@ function handleSwipe() {
     }
 
 }
+// ==========================================
+// OPEN FULL GALLERY AT A SPECIFIC PHOTO
+// ==========================================
+
+const urlParams = new URLSearchParams(window.location.search);
+const startPhoto = urlParams.get("start");
+
+if (startPhoto && albumImages.length > 0) {
+
+    const startIndex = parseInt(startPhoto, 10) - 1;
+
+    if (
+        startIndex >= 0 &&
+        startIndex < albumImages.length
+    ) {
+
+        currentImageIndex = startIndex;
+
+        lightboxImage.src =
+            albumImages[currentImageIndex].src;
+
+        lightbox.classList.add("active");
+
+        document.body.style.overflow = "hidden";
+
+    }
+
+}
