@@ -193,61 +193,41 @@ textarea {
 
 .hero {
     position: relative;
-
     min-height: 100vh;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    padding: 130px 25px 80px;
+    padding: 120px 25px 50px;
 
     text-align: center;
 
     background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(8, 125, 123, 0.45),
+            transparent 45%
+        ),
         linear-gradient(
             135deg,
-            rgba(8, 125, 123, 0.95),
-            rgba(22, 29, 30, 0.94)
-        );
-}
-
-.hero::before {
-    content: "";
-
-    position: absolute;
-    inset: 0;
-
-    background:
-        radial-gradient(
-            circle at 25% 30%,
-            rgba(221, 146, 39, 0.16),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 75% 70%,
-            rgba(8, 125, 123, 0.35),
-            transparent 35%
+            #087d7b 0%,
+            #075f5e 50%,
+            #123334 100%
         );
 
-    pointer-events: none;
-}
-
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-
-    background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.08),
-        rgba(0, 0, 0, 0.28)
-    );
+    overflow: hidden;
 }
 
 .hero-content {
     position: relative;
 
+    width: 100%;
     max-width: 900px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     color: var(--white);
 
@@ -255,108 +235,123 @@ textarea {
 
     animation: heroFade 1.2s ease forwards;
 }
-.hero-logo {
-    width: min(420px, 80vw);
-    height: auto;
 
-    margin: 0 auto 35px;
 
-    display: block;
+/* Photography • Adventure • Storytelling */
 
-    filter: drop-shadow(0 12px 25px rgba(0, 0, 0, 0.25));
-}
 .hero-small-text {
     margin-bottom: 20px;
 
     color: var(--gold-light);
 
-    font-size: 0.8rem;
-    font-weight: 500;
+    font-size: 0.75rem;
+    font-weight: 600;
 
     letter-spacing: 4px;
     text-transform: uppercase;
 }
 
+
+/* Man and woman artwork */
+
+.hero-portrait {
+    display: block;
+
+    width: min(360px, 65vw);
+    height: auto;
+
+    margin: 0 auto -25px;
+
+    object-fit: contain;
+
+    filter: drop-shadow(
+        0 15px 25px rgba(0, 0, 0, 0.15)
+    );
+}
+
+
+/* SibLens */
+
 .hero h1 {
+    position: relative;
+
+    margin: 0;
+
     font-family: var(--heading-font);
 
-    font-size: clamp(4rem, 11vw, 9rem);
+    font-size: clamp(4.5rem, 9vw, 7.5rem);
     font-weight: 500;
 
-    line-height: 0.95;
+    line-height: 1;
 
     letter-spacing: -3px;
-}
-
-.hero-tagline {
-    margin-top: 25px;
-
-    font-family: var(--heading-font);
-
-    font-size: clamp(1.3rem, 3vw, 2rem);
-    font-style: italic;
-
-    color: var(--gold-light);
-}
-
-.hero-button {
-    display: inline-block;
-
-    margin-top: 45px;
-    padding: 16px 32px;
-
-    border: 1px solid rgba(255, 255, 255, 0.7);
 
     color: var(--white);
 
-    font-size: 0.75rem;
+    z-index: 3;
+}
+
+
+/* Gold line */
+
+.hero-divider {
+    width: 75px;
+    height: 2px;
+
+    margin: 25px auto;
+
+    background: var(--gold);
+}
+
+
+/* Explore Our Journey button */
+
+.hero-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 280px;
+
+    padding: 15px 30px;
+
+    background: transparent;
+
+    border: 1px solid var(--gold);
+
+    color: var(--gold-light);
+
+    font-size: 0.7rem;
     font-weight: 600;
 
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     text-transform: uppercase;
 
     transition:
         background 0.3s ease,
         color 0.3s ease,
-        border 0.3s ease,
         transform 0.3s ease;
 }
 
 .hero-button:hover {
     background: var(--gold);
-    border-color: var(--gold);
 
     color: var(--dark);
 
     transform: translateY(-3px);
 }
 
-.scroll-indicator {
-    position: absolute;
 
-    bottom: 30px;
-    left: 50%;
+/* Down arrow */
 
-    transform: translateX(-50%);
+.hero-scroll-arrow {
+    display: block;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin-top: 25px;
 
-    gap: 4px;
+    color: var(--gold-light);
 
-    color: rgba(255, 255, 255, 0.7);
-
-    font-size: 0.65rem;
-
-    letter-spacing: 2px;
-    text-transform: uppercase;
-
-    z-index: 2;
-}
-
-.scroll-arrow {
-    font-size: 1.3rem;
+    font-size: 1.8rem;
 
     animation: bounce 2s infinite;
 }
