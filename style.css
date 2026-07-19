@@ -1083,3 +1083,15 @@ text-underline-offset: 5px;
     }
 
 }
+/* =========================================
+   HERO LINKS - DESKTOP ONLY
+========================================= */
+
+@media (min-width: 601px) {
+
+    .hero-small-text a {
+        font-size: 0.9rem;
+        margin: 0 28px;
+    }
+
+}
