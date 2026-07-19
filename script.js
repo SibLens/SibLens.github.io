@@ -187,3 +187,59 @@ document.addEventListener("keydown", (event) => {
     }
 
 });
+// ==========================================
+// LIGHTBOX MOBILE SWIPE CONTROLS
+// ==========================================
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+
+// Record where the user starts touching
+
+lightbox.addEventListener("touchstart", (event) => {
+
+    touchStartX = event.changedTouches[0].screenX;
+
+});
+
+
+// Record where the user's swipe ends
+
+lightbox.addEventListener("touchend", (event) => {
+
+    touchEndX = event.changedTouches[0].screenX;
+
+    handleSwipe();
+
+});
+
+
+// Work out which direction the user swiped
+
+function handleSwipe() {
+
+    const swipeDistance =
+        touchStartX - touchEndX;
+
+    const minimumSwipeDistance = 50;
+
+
+    // Swipe left = next photo
+
+    if (swipeDistance > minimumSwipeDistance) {
+
+        showImage(currentImageIndex + 1);
+
+    }
+
+
+    // Swipe right = previous photo
+
+    if (swipeDistance < -minimumSwipeDistance) {
+
+        showImage(currentImageIndex - 1);
+
+    }
+
+}
