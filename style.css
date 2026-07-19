@@ -277,7 +277,7 @@ textarea {
 
     margin: 0;
 
-    font-family: var(--heading-font);
+    font-family: "Allura", cursive;
 
     font-size: clamp(6rem, 11vw, 9rem);
     font-weight: 500;
