@@ -250,7 +250,24 @@ textarea {
     letter-spacing: 4px;
     text-transform: uppercase;
 }
+.hero-small-text a {
+    display: inline-block;
+    color: var(--gold-light);
+    margin: 0 18px;
 
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.hero-small-text a:hover {
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.hero-small-text span {
+    color: var(--gold-light);
+}
 
 /* Man and woman artwork */
 
