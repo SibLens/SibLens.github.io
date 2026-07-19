@@ -60,3 +60,87 @@ if (contactForm) {
     });
 
 }
+// ==========================================
+// PHOTO LIGHTBOX
+// ==========================================
+
+const albumImages = document.querySelectorAll(".album-photo img");
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+
+const lightboxClose = document.getElementById("lightboxClose");
+const lightboxPrev = document.getElementById("lightboxPrev");
+const lightboxNext = document.getElementById("lightboxNext");
+
+let currentImageIndex = 0;
+
+
+// Open the lightbox
+
+albumImages.forEach((image, index) => {
+
+    image.addEventListener("click", () => {
+
+        currentImageIndex = index;
+
+        lightboxImage.src = image.src;
+
+        lightbox.classList.add("active");
+
+        document.body.style.overflow = "hidden";
+
+    });
+
+});
+
+
+// Show the selected image
+
+function showImage(index) {
+
+    if (index < 0) {
+        currentImageIndex = albumImages.length - 1;
+    }
+
+    else if (index >= albumImages.length) {
+        currentImageIndex = 0;
+    }
+
+    else {
+        currentImageIndex = index;
+    }
+
+    lightboxImage.src =
+        albumImages[currentImageIndex].src;
+
+}
+
+
+// Previous photo
+
+lightboxPrev.addEventListener("click", () => {
+
+    showImage(currentImageIndex - 1);
+
+});
+
+
+// Next photo
+
+lightboxNext.addEventListener("click", () => {
+
+    showImage(currentImageIndex + 1);
+
+});
+
+
+// Close the lightbox
+
+lightboxClose.addEventListener("click", () => {
+
+    lightbox.classList.remove("active");
+
+    document.body.style.overflow = "";
+
+});
