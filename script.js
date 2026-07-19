@@ -64,7 +64,9 @@ if (contactForm) {
 // PHOTO LIGHTBOX
 // ==========================================
 
-const albumImages = document.querySelectorAll(".album-photo img");
+const albumImages = document.querySelectorAll(
+    ".album-photo img, .gallery-item img"
+);
 
 const lightbox = document.getElementById("lightbox");
 const lightboxImage = document.getElementById("lightboxImage");
