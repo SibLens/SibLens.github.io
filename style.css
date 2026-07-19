@@ -257,7 +257,7 @@ textarea {
 .hero-portrait {
     display: block;
 
-    width: min(430px, 70vw);
+    width: min(500px, 70vw);
     height: auto;
 
     margin: 0 auto -80px;
