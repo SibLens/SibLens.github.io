@@ -97,7 +97,7 @@ textarea {
 }
 
 .brand-name {
-    font-family: var(--heading-font);
+    font-family: "Satisfy", cursive;
     font-size: 1.8rem;
     line-height: 1;
     letter-spacing: 0.5px;
