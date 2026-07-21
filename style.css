@@ -164,13 +164,13 @@ textarea {
 .nav-socials {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 16px;
 }
 
 .nav-socials a {
     color: var(--white);
 
-    font-size: 1.2rem;
+    font-size: 1.4rem;
 
     display: flex;
     align-items: center;
