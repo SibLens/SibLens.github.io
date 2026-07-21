@@ -324,6 +324,10 @@ text-underline-offset: 5px;
         margin-bottom: -210px;
     }
 
+    .hero h1 {
+        font-size: clamp(8rem, 15vw, 13rem);
+    }
+
 }
 
 /* SibLens */
