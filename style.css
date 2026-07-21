@@ -473,7 +473,15 @@ text-underline-offset: 5px;
 
     background: var(--cream);
 }
+.gallery-frame {
+    background: #1f292a;
 
+    padding: 14px;
+
+    max-width: fit-content;
+
+    margin: 0 auto;
+}
 .gallery-grid {
     max-width: 1400px;
     margin: 0 auto;
