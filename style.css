@@ -161,22 +161,30 @@ textarea {
 }
 /* Header social media icons */
 
-.nav-links .nav-social-icon {
+.nav-socials {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-socials a {
     color: var(--white);
 
     font-size: 1.2rem;
 
-    margin-left: -24px;
-
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
+
+    letter-spacing: 0;
 }
 
-/* Remove underline effect from social icons */
-
-.nav-links .nav-social-icon::after {
+.nav-socials a::after {
     display: none;
+}
+
+.nav-socials a:hover {
+    color: var(--gold-light);
 }
 
 /* Mobile menu button */
