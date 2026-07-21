@@ -315,7 +315,15 @@ text-underline-offset: 5px;
         0 15px 25px rgba(0, 0, 0, 0.15)
     );
 }
+/* Larger hero portrait on desktop only */
 
+@media (min-width: 601px) {
+
+    .hero-portrait {
+        width: min(800px, 85vw);
+    }
+
+}
 
 /* SibLens */
 
