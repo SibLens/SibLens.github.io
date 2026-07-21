@@ -321,6 +321,7 @@ text-underline-offset: 5px;
 
     .hero-portrait {
         width: min(800px, 85vw);
+        margin-bottom: -210px;
     }
 
 }
