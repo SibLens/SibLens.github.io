@@ -1087,6 +1087,8 @@ height: 100%;
 
     display:none;
 
+    opacity:0;
+
     text-align:center;
 
     background:var(--cream);
@@ -1097,7 +1099,21 @@ height: 100%;
 
     padding:60px 40px;
 
-    animation:fadeIn .5s ease;
+    transform:translateY(15px);
+
+    transition:
+        opacity .5s ease,
+        transform .5s ease;
+
+}
+
+.thank-you-panel.active{
+
+    display:block;
+
+    opacity:1;
+
+    transform:translateY(0);
 
 }
 
