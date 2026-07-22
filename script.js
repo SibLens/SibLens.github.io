@@ -88,17 +88,6 @@ contactForm.style.display = "none";
 // Show the thank you panel
 thankYouPanel.classList.add("active");
 
-setTimeout(() => {
-
-    window.scrollTo({
-
-        top: 0,
-
-        behavior: "smooth"
-
-    });
-
-}, 6000);
 
 setTimeout(() => {
 
