@@ -44,6 +44,7 @@ if (currentYear) {
 
 const contactForm = document.getElementById("contactForm");
 const formMessage = document.getElementById("formMessage");
+const thankYouPanel = document.getElementById("thankYouPanel");
 
 if (contactForm) {
 
@@ -81,35 +82,43 @@ if (contactForm) {
 
             contactForm.reset();
 
-            submitButton.innerHTML = "✓ Message Sent";
+// Hide the form
+contactForm.style.display = "none";
 
-            formMessage.innerHTML =
-                "<strong>Thank you!</strong><br>Your message has been sent successfully. We'll be in touch soon.";
+// Show the thank you panel
+thankYouPanel.classList.add("active");
 
-            formMessage.className =
-                "form-message success";
+setTimeout(() => {
 
-            setTimeout(() => {
+    window.scrollTo({
 
-                window.scrollTo({
+        top: 0,
 
-                    top: 0,
+        behavior: "smooth"
 
-                    behavior: "smooth"
+    });
 
-                });
+}, 6000);
 
-                submitButton.disabled = false;
+setTimeout(() => {
 
-                submitButton.innerHTML =
-                    'Send Message <span>→</span>';
+    // Hide the thank you panel
+    thankYouPanel.classList.remove("active");
 
-                formMessage.textContent = "";
+    // Show the form again
+    contactForm.style.display = "block";
 
-                formMessage.className =
-                    "form-message";
+    submitButton.disabled = false;
 
-            }, 4000);
+    submitButton.innerHTML =
+        'Send Message <span>→</span>';
+
+    formMessage.textContent = "";
+
+    formMessage.className =
+        "form-message";
+
+}, 7000);
 
         }
 
