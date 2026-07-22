@@ -1462,15 +1462,54 @@ height: 100%;
 }
 
 
-    /* About */
+   /* About - Mobile */
 
-    .about-section {
-        padding: 100px 25px;
-    }
+.about-section {
+    padding: 100px 25px;
+}
 
-    .about-text p:first-child {
-        font-size: 1.35rem;
-    }
+.about-title {
+    width: 100%;
+    text-align: center;
+}
+
+.about-title .section-label {
+    text-align: center;
+}
+
+.about-title h2 {
+    text-align: center;
+}
+
+
+/* Centre portrait images */
+
+.about-portraits {
+    width: 100%;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    margin-top: 45px;
+
+    transform: none;
+}
+
+
+/* Make portraits fit comfortably on mobile */
+
+.about-portrait {
+    width: 135px;
+    height: 190px;
+
+    flex-shrink: 0;
+}
+
+
+.about-text p:first-child {
+    font-size: 1.35rem;
+}
 
 
     /* Social */
