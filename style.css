@@ -842,6 +842,8 @@ height: 100%;
     gap: 50px;
 
     margin-top: 45px;
+
+    transform: translateX(-55px);
 }
 
 .about-portrait {
