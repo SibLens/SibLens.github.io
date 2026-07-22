@@ -39,23 +39,94 @@ if (currentYear) {
 
 
 // ------------------------------------------
-// CONTACT FORM - TEMPORARY
+// CONTACT FORM
 // ------------------------------------------
-
-// The contact form isn't connected to your email yet.
-// We'll set this up later.
 
 const contactForm = document.getElementById("contactForm");
 const formMessage = document.getElementById("formMessage");
 
 if (contactForm) {
 
-    contactForm.addEventListener("submit", (event) => {
+    const submitButton =
+        contactForm.querySelector(".submit-button");
+
+    contactForm.addEventListener("submit", async (event) => {
 
         event.preventDefault();
 
-        formMessage.textContent =
-            "Thanks for your message! Our contact form will be available soon.";
+        submitButton.disabled = true;
+        submitButton.innerHTML = "Sending...";
+
+        formMessage.textContent = "";
+
+        const formData = new FormData(contactForm);
+
+        try {
+
+            const response = await fetch(contactForm.action, {
+
+                method: "POST",
+
+                body: formData,
+
+                headers: {
+                    Accept: "application/json"
+                }
+
+            });
+
+            if (!response.ok) {
+                throw new Error("Submission failed.");
+            }
+
+            contactForm.reset();
+
+            submitButton.innerHTML = "✓ Message Sent";
+
+            formMessage.innerHTML =
+                "<strong>Thank you!</strong><br>Your message has been sent successfully. We'll be in touch soon.";
+
+            formMessage.className =
+                "form-message success";
+
+            setTimeout(() => {
+
+                window.scrollTo({
+
+                    top: 0,
+
+                    behavior: "smooth"
+
+                });
+
+                submitButton.disabled = false;
+
+                submitButton.innerHTML =
+                    'Send Message <span>→</span>';
+
+                formMessage.textContent = "";
+
+                formMessage.className =
+                    "form-message";
+
+            }, 4000);
+
+        }
+
+        catch (error) {
+
+            submitButton.disabled = false;
+
+            submitButton.innerHTML =
+                'Send Message <span>→</span>';
+
+            formMessage.textContent =
+                "Sorry, something went wrong. Please try again.";
+
+            formMessage.className =
+                "form-message error";
+
+        }
 
     });
 
